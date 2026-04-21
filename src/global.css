@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* ? Mobing animation for this  */
+
+
+
+@keyframes jcbMove {
+  0% {
+    transform: translateX(-35px);
+  }
+  50% {
+    transform: translateX(35px);
+  }
+  100% {
+    transform: translateX(-35px);
+  }
+}
+
+.jcb-move {
+  animation: jcbMove 4s ease-in-out infinite;
+}
+
+
+
+:root {
+  --color-primary: #172E64;
+  --color-accent: #C9A14A;
+  --color-dark: #0F1F3D;
+  --color-light: #ffffff;
+  --color-gray: #d1d5db;
+}
