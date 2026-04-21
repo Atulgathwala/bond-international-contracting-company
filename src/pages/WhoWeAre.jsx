@@ -51,7 +51,7 @@ const WhoWeAre = () => {
 
   return (
     <section
-      id="who-we-are"
+      id="about"
       className="min-h-screen w-full flex flex-col md:flex-row items-center px-6 md:px-16 py-20 bg-[var(--color-light)]"
     >
       {/* LEFT SIDE */}
@@ -111,19 +111,19 @@ const WhoWeAre = () => {
         </div>
 
         {/* TRIANGLE */}
-        <div className="relative w-full h-full flex justify-center items-center">
+        <div className="relative w-full h-full flex justify-center items-center ">
 
           {/* Circle 1 */}
           <div
             ref={(el) => (circleRef.current[0] = el)}
-            className="absolute left-10 md:left-20 top-20 w-44 md:w-48 h-44 md:h-48 rounded-full flex flex-col items-center justify-center text-white shadow-xl"
+            className="absolute left-2 sm:left-10 md:left-20 top-20 w-35 sm:w-44 md:w-48 h-35 sm:h-44 md:h-48 rounded-full flex flex-col items-center justify-center text-white shadow-xl"
             style={{
               background:
                 "linear-gradient(to top right, var(--color-dark), var(--color-primary))",
             }}
           >
             <FaUsersCog size={34} />
-            <p className="mt-2 font-bold text-lg">500+</p>
+            <p className="mt-2 font-bold sm:text-lg">500+</p>
             <p className="text-xs text-center px-3">
               Skilled Workforce
             </p>
@@ -132,7 +132,7 @@ const WhoWeAre = () => {
           {/* Circle 2 */}
           <div
             ref={(el) => (circleRef.current[1] = el)}
-            className="absolute right-10 md:right-20 top-20 w-44 md:w-48 h-44 md:h-48 rounded-full flex flex-col items-center justify-center text-white shadow-xl"
+            className="absolute  right-2 sm:right-10 md:right-20 top-20 w-35 sm:w-44 md:w-48 h-35 sm:h-44 md:h-48 rounded-full flex flex-col items-center justify-center text-white shadow-xl"
             style={{
               background:
                 "linear-gradient(to top right, var(--color-primary), var(--color-accent))",
@@ -148,7 +148,7 @@ const WhoWeAre = () => {
           {/* Circle 3 */}
           <div
             ref={(el) => (circleRef.current[2] = el)}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 w-48 md:w-52 h-48 md:h-52 rounded-full flex flex-col items-center justify-center text-white shadow-xl"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 w-37 sm:w-44 md:w-52  h-37 sm:h-48 md:h-52 rounded-full flex flex-col items-center justify-center text-white shadow-xl"
             style={{
               background:
                 "linear-gradient(to top right, var(--color-dark), var(--color-accent))",

@@ -7,6 +7,10 @@ import WhoWeAre from './pages/WhoWeAre'
 import HappyClients from './pages/HappyClients'
 import WhyChooseUs from './pages/WhyChooseUs'
 import WhatWeOffer from './pages/WhatWeOffer'
+import Testimonials from './pages/Testimonials'
+import CTABanner from './pages/CtaBanner'
+import ContactFooter from './pages/ContactFooter'
+
 
 const App = () => {
   return (
@@ -19,6 +23,10 @@ const App = () => {
     
     <HappyClients/>
     <WhyChooseUs/>
+    <Testimonials/>
+    <CTABanner/>
+    <ContactFooter/>
+  
     
     </div>
   )

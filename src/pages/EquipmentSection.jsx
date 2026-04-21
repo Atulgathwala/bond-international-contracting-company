@@ -45,7 +45,7 @@ const equipmentData = [
 
 const EquipmentSection = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section id="equipment" className="py-16 bg-gray-50">
       
       {/* Heading */}
       <div className="text-center mb-12">

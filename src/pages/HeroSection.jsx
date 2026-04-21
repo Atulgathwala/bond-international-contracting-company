@@ -38,6 +38,7 @@ const HeroSection = () => {
 
   return (
     <section
+    id="home"
       className="h-[95vh] w-full bg-cover bg-center relative flex items-center"
       style={{ backgroundImage: `url(${indexImage})` }}
     >

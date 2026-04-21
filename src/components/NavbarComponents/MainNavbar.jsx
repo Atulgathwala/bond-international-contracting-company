@@ -5,7 +5,7 @@ import JCBMOV from "../../assets/images/pushingjcb.png";
 
 const MainNavbar = () => {
   return (
-    <header className="fixed top-0 w-full z-50 bg-white shadow-md border-b border-gray-200">
+    <header className="fixed top-0 w-full z-50 bg-white shadow-md border-b border-gray-200 shadow-md">
       
       <nav className="max-w-7xl mx-auto px-6 h-[75px] flex items-center justify-between">
         
