@@ -29,3 +29,13 @@
   --color-light: #ffffff;
   --color-gray: #d1d5db;
 }
+
+
+@keyframes loading {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -1,123 +1,268 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 
-let construction = "https://res.cloudinary.com/dasa3kzyf/image/upload/v1776764324/diugy4jle2iuussqeztd.avif"
-let eavylifting = "https://res.cloudinary.com/dasa3kzyf/image/upload/v1776764360/lifu82bbntfibbqjjfom.jpg"
-let fabrication = "https://res.cloudinary.com/dasa3kzyf/image/upload/v1776764289/qofgfuzovnd5yz01sgsc.avif"
-let fencing = "https://res.cloudinary.com/dasa3kzyf/image/upload/v1776764364/znjex31v6hvmckc12fqw.jpg"
-let manpower = "https://res.cloudinary.com/dasa3kzyf/image/upload/v1776764356/jszyznnwyfkduvwwowcq.jpg"
-let portablecabin = "https://res.cloudinary.com/dasa3kzyf/image/upload/v1776764361/p9vt2li27actihyunxsa.jpg"
-let steel = "https://res.cloudinary.com/dasa3kzyf/image/upload/v1776764357/hitujzeoigbz6alsblha.avif"
+
+// ? steel Images
+
+
+// ? Material
+let consImg1 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926270/lqulp8g8u16puyylwppj.png";
+let consImg2 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926269/lei6mpkau47pmkox0mgb.png";
+let consImg3 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926268/a4cve7df9ikqb4mxyt2m.png";
+let consImg4 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926268/c55lewbahgl1tkixzyuy.png";
+
+// ? Transportation
+let transImg1 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926098/bexwtizfgtbynen1ds7u.png";
+let transImg2 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926098/ljyjtdug0vuqihk4v0mv.png";
+let transImg3 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926097/lkh7ohpbvb7w61svaymg.png";
+let transImg4 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926096/ntat9wiopmwog4cudkbm.png";
+
+// ? Heavy equipments
+let heavyImg1 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926131/dnn7bmr5o23sg0mr2rai.png";
+let heavyImg2 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926131/yektsuqbl5pc8jxugbd3.png";
+let heavyImg3 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926131/oy7vti06nxlfurzgzk7k.png";
+let heavyImg4 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926130/kbnftbfvzcz5jtj5mepu.png";
+
+// ? Car rentals
+let carrentalImg1 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926176/kntp3ludktjjrkwsrmiw.png";
+let carrentalImg2 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926176/rnig8s0hermipjthkoa9.png";
+let carrentalImg3 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926175/g0kzbi6obbo0j7d4djk4.png";
+let carrentalImg4 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926174/ipeva4bej2lidpvadxeg.png";
+
+// ? Portable cabins
+let portableImg1 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926192/iqyapuvgeu9iur49vhbp.png";
+let portableImg2 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926192/q3pkiz1xmyza6pfuaww0.png";
+let portableImg3 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926192/gwpdpnrud3pca0okifqy.png";
+let portableImg4 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926192/gwpdpnrud3pca0okifqy.png";
+
+// ? Manpower
+let manImg1 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926211/kpixquc6qdmibs4l2tnj.jpg";
+let manImg2 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926210/izmzmokggjbka8a9p8lv.jpg";
+let manImg3 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926210/ogvrdndc62zimgviacdj.jpg";
+let manImg4 = "https://res.cloudinary.com/dasa3kzyf/image/upload/f_auto,q_auto,w_1200/v1776926210/nsdnbvluveelscwdpkqe.webp";
+
+
+
+
+
+
+
+
 
 const services = [
-{ title:'Trading Material Supply', desc:'Complete supply of pipes, valves, fittings, safety products, electricals and industrial materials with reliable delivery and quality assurance for every project scale.', img:steel   },
+  {
+    title: "Transportation",
+    desc: "Reliable transportation solutions for industrial goods, machinery movement, staff shifting and project logistics with timely delivery support.",
+    img1: transImg1,
+    img2: transImg2,
+    img3: transImg3,
+    img4: transImg4,
+  },
 
-{ title:'Fabrication Services', desc:'Professional fabrication solutions including steel structures, welding works, customized metal components and on-site installation support.', img:fabrication},
-{ title:'Construction & Contracting', desc:'End-to-end contracting services covering civil execution, site supervision, manpower and quality-focused project delivery.', img:construction },
-{ title:'Portable Cabin Services', desc:'Premium modular cabins for offices, accommodation, storage and temporary facilities with modern finishing.', img:portablecabin },
-{ title:'Fencing Services', desc:'Secure chain-link fencing, perimeter walls and boundary solutions for commercial and industrial locations.', img:fencing },
-{ title:'Heavy Lifting Services', desc:'Safe crane operations, rigging, machinery shifting and specialized lifting handled by experts.', img:eavylifting },
-{ title:'Manpower Supply', desc:'Certified operators, technicians, welders, helpers and trained workforce available for urgent and long-term projects.', img:manpower }
+  {
+    title: "Heavy Equipment",
+    desc: "Wide range of heavy equipment available for rental including cranes, excavators, loaders and site machinery with expert operators.",
+    img1: heavyImg1,
+    img2: heavyImg2,
+    img3: heavyImg3,
+    img4: heavyImg4,
+  },
+
+  {
+    title: "Material Supply",
+    desc: "Complete supply of construction materials, industrial tools, safety products, pipes, fittings and electrical items for all project needs.",
+    img1: consImg1,
+    img2: consImg2,
+    img3: consImg3,
+    img4: consImg4,
+  },
+
+  {
+    title: "Car Rental",
+    desc: "Affordable and premium car rental services for companies, site visits, airport transfers and daily transportation requirements.",
+    img1: carrentalImg1,
+    img2: carrentalImg2,
+    img3: carrentalImg3,
+    img4: carrentalImg4,
+  },
+
+  {
+    title: "Portable Cabins",
+    desc: "Modern portable cabins for office space, labor accommodation, storage and temporary facilities with quality finishing.",
+    img1: portableImg1,
+    img2: portableImg2,
+    img3: portableImg3,
+    img4: portableImg4,
+  },
+
+  {
+    title: "Man Power",
+    desc: "Skilled and unskilled manpower supply including operators, helpers, technicians, welders and project workforce on demand.",
+    img1: manImg1,
+    img2: manImg2,
+    img3: manImg3,
+    img4: manImg4,
+  },
 ];
 
-export default function TrendyServicesShowcase(){
-const refs = useRef([]);
+export default function TrendyServicesShowcase() {
+  const refs = useRef([]);
+useEffect(() => {
+  refs.current.forEach((card) => {
+    const diamonds = card.querySelectorAll(".diamond-box");
+    const txt = card.querySelector(".text-box");
 
-useEffect(()=>{
- refs.current.forEach((card)=>{
-   const img = card.querySelector('.img-box');
-   const txt = card.querySelector('.text-box');
-   gsap.fromTo(img,{x:-100,opacity:0,rotate:-8},{x:0,opacity:1,rotate:-8,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:card,start:'top 80%'}});
-   gsap.fromTo(txt,{x:100,opacity:0},{x:0,opacity:1,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:card,start:'top 80%'}});
- });
- return ()=>ScrollTrigger.getAll().forEach(t=>t.kill());
-},[]);
+    /* 4 boxes roll + come together once */
+    gsap.fromTo(
+      diamonds,
+      {
+        opacity: 0,
+        scale: 0.4,
+        rotate: -180,
+        x: (i) => {
+          if (i === 0) return 0;       // top
+          if (i === 1) return -220;   // left
+          if (i === 2) return 220;    // right
+          return 0;                   // bottom
+        },
+        y: (i) => {
+          if (i === 0) return -220;
+          if (i === 1) return 0;
+          if (i === 2) return 0;
+          return 220;
+        },
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        rotate: 45,
+        x: 0,
+        y: 0,
+        duration: 1.8,
+        stagger: 0.15,
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+        },
+      }
+    );
 
-return(
-<section id='services' className='  text-[var(--color-primary)] py-20 px-4 md:px-10 overflow-hidden'>
- <div className='text-center mb-16'>
-   <p className='text-[var(--color-accent)] tracking-[0.35em] text-sm'>OUR SERVICES</p>
-   <h2 className='text-5xl md:text-7xl font-bold mt-3'>Industrial <span className='text-[var(--color-accent)]'>Solutions</span></h2>
- </div>
+    /* text animation */
+    gsap.fromTo(
+      txt,
+      {
+        x: 120,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.3,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+        },
+      }
+    );
+  });
 
- {services.map((item,index)=>(
- <div key={index} ref={el=>refs.current[index]=el} className='relative max-w-7xl mx-auto min-h-screen border border-white/15 rounded-[32px] mb-14 px-6 md:px-14 py-10 grid md:grid-cols-2 items-center bg-white/[0.03] backdrop-blur-sm'>
-   <div className={`img-box ${index%2!==0 ? 'md:order-2 md:ml-auto' : ''}`}>
-     <div className='w-[220px] h-[220px] md:w-[320px] md:h-[320px] rotate-45 rounded-[36px] overflow-hidden border-2 border-[var(--color-accent)] shadow-2xl mx-auto'>
-       <img src={item.img} alt={item.title} className='w-full h-full object-cover -rotate-45 scale-150 hover:scale-[1.7] duration-700'/>
-     </div>
-   </div>
-
-   <div className={`text-box ${index%2!==0 ? 'md:order-1' : ''}`}>
-    <div className=' mt-10  '> <span className='inline-block px-4 py-2 rounded-full bg-amber-400/10 text-amber-400 text-xs   sm:tracking-[0.25em]'>TRUSTED SERVICE</span></div>
-     <h3 className='text-4xl md:text-6xl font-bold leading-tight mt-5'>{item.title}</h3>
-     <p className='text-slate-300 text-lg leading-8 mt-6 max-w-xl'>{item.desc}</p>
-     <p className='text-slate-400 mt-5 leading-8 max-w-xl'>We focus on timely execution, premium quality standards and customer satisfaction through reliable solutions tailored for every requirement.</p>
-
-     <div className='flex gap-4 mt-8 flex-wrap'>
-       {/* <button className='px-7 py-4 rounded-full bg-[var(--color-accent)]  text-[var(--color-primary)] font-semibold hover:scale-105 duration-300'>Explore More</button> */}
-       {/* <button className='px-7 py-4 rounded-full border border-white/20 hover:bg-white/10 duration-300'>Get Quote</button> */}
-     </div>
-   </div>
-
-   
- </div>
-
-
- ))}
-
-<div className='max-w-7xl mx-auto mt-20'>
-  <div className='text-center mb-12'>
-    <p className='text-[var(--color-accent)] tracking-[0.35em] text-sm'>
-      HOW WE WORK
-    </p>
-
-    <h2 className='text-4xl md:text-6xl font-bold mt-3 text-[var(--color-primary)]'>
-      Our <span className='text-[var(--color-accent)]'>Process</span>
-    </h2>
-  </div>
-
-  <div className='grid md:grid-cols-4 gap-6'>
-    {[
-      ['01','Inquiry','Share your requirement, timeline and project details with our team.'],
-      ['02','Planning','We prepare scope, pricing, resources and execution strategy.'],
-      ['03','Execution','Our skilled team starts work with safety and quality standards.'],
-      ['04','Delivery','On-time completion, final checks and client satisfaction handover.']
-    ].map((step,i)=>(
-      <div
-        key={i}
-        className='
-          rounded-3xl
-          border border-[var(--color-accent)]/20
-          bg-[var(--color-primary)]
-          backdrop-blur-md
-          p-8
-          shadow-xl
-          hover:-translate-y-3
-          hover:border-[var(--color-accent)]
-          hover:shadow-[0_0_30px_rgba(201,161,74,0.18)]
-          transition-all duration-300
-        '
-      >
-        <div className='text-6xl font-bold text-[var(--color-accent)]'>
-          {step[0]}
-        </div>
-
-        <h3 className='text-2xl font-semibold mt-4 text-[var(--color-primary)]'>
-          {step[1]}
-        </h3>
-
-        <p className='text-gray-400 mt-4 leading-7'>
-          {step[2]}
+  return () => ScrollTrigger.getAll().forEach((t) => t.kill());
+}, []);
+  return (
+    <section
+      id="services"
+      className="text-[var(--color-primary)] py-20 px-4 md:px-10 overflow-hidden"
+    >
+      <div className="text-center mb-16">
+        <p className="text-[var(--color-accent)] tracking-[0.35em] text-sm">
+          OUR SERVICES
         </p>
+
+        <h2 className="text-5xl md:text-7xl font-bold mt-3">
+          Industrial{" "}
+          <span className="text-[var(--color-accent)]">Solutions</span>
+        </h2>
       </div>
-    ))}
-  </div>
-</div>
-</section>
-)
+
+      {services.map((item, index) => (
+        <div
+          key={index}
+          ref={(el) => (refs.current[index] = el)}
+          className="relative max-w-7xl mx-auto min-h-screen border border-white/15 rounded-[32px] mb-14 px-6 md:px-14 py-10 grid md:grid-cols-2 items-center bg-white/[0.03] backdrop-blur-sm"
+        >
+          {/* IMAGE SECTION */}
+          <div
+            className={`img-box relative w-[275px] h-[275px] md:w-[500px] md:h-[500px] mx-auto ${
+              index % 2 !== 0 ? "md:order-2 md:ml-auto" : ""
+            }`}
+          >
+            {/* Top */}
+            <div className="diamond-box absolute top-0 left-1/2 -translate-x-1/2 w-[110px] h-[110px] md:w-[200px] md:h-[200px] rotate-45 rounded-[14px] sm:rounded-[24px] overflow-hidden border-2 border-[var(--color-accent)] shadow-2xl">
+              <img
+                src={item.img1}
+                alt=""
+                className="w-full h-full object-cover -rotate-45 scale-150 hover:scale-[1.7] duration-700"
+              />
+            </div>
+
+            {/* Left */}
+            <div className="diamond-box absolute top-1/2 left-0 -translate-y-1/2 w-[110px] h-[110px] md:w-[200px] md:h-[200px] rotate-45 rounded-[14px] sm:rounded-[24px] overflow-hidden border-2 border-[var(--color-accent)] shadow-2xl">
+              <img
+                src={item.img2}
+                alt=""
+                className="w-full h-full object-cover -rotate-45 scale-150 hover:scale-[1.7] duration-700"
+              />
+            </div>
+
+            {/* Right */}
+            <div className="diamond-box absolute top-1/2 right-0 -translate-y-1/2 w-[110px] h-[110px] md:w-[200px] md:h-[200px] rotate-45 rounded-[14px] sm:rounded-[24px] overflow-hidden border-2 border-[var(--color-accent)] shadow-2xl">
+              <img
+                src={item.img3}
+                alt=""
+                className="w-full h-full object-cover -rotate-45 scale-150 hover:scale-[1.7] duration-700"
+              />
+            </div>
+
+            {/* Bottom */}
+            <div className="diamond-box absolute bottom-0 left-1/2 -translate-x-1/2 w-[110px] h-[110px] md:w-[200px] md:h-[200px] rotate-45 rounded-[14px] sm:rounded-[24px] overflow-hidden border-2 border-[var(--color-accent)] shadow-2xl">
+              <img
+                src={item.img4}
+                alt=""
+                className="w-full h-full object-cover -rotate-45 scale-150 hover:scale-[1.7] duration-700"
+              />
+            </div>
+          </div>
+
+          {/* CONTENT */}
+          <div className={`text-box ${index % 2 !== 0 ? "md:order-1" : ""}`}>
+            <div className="mt-10">
+              <span className="inline-block px-4 py-2 rounded-full bg-amber-400/10 text-amber-400 text-xs sm:tracking-[0.25em]">
+                TRUSTED SERVICE
+              </span>
+            </div>
+
+            <h3 className="text-4xl md:text-6xl font-bold leading-tight mt-5">
+              {item.title}
+            </h3>
+
+            <p className="text-slate-500 text-lg leading-8 mt-6 max-w-xl">
+              {item.desc}
+            </p>
+
+            <p className="text-slate-400 mt-5 leading-8 max-w-xl">
+              We focus on timely execution, premium quality standards and
+              customer satisfaction through reliable solutions tailored for every
+              requirement.
+            </p>
+          </div>
+        </div>
+      ))}
+    </section>
+  );
 }

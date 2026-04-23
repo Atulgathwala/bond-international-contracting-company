@@ -51,8 +51,8 @@ const WhoWeAre = () => {
 
   return (
     <section
-      id="about"
-      className="min-h-screen w-full flex flex-col md:flex-row items-center px-6 md:px-16 py-20 bg-[var(--color-light)]"
+      id="who-we-are"
+      className="min-h-screen w-full flex flex-col md:flex-row items-center px-6 md:px-16 py-20 bg-[#eee]"
     >
       {/* LEFT SIDE */}
       <div className="md:w-1/2 space-y-6">

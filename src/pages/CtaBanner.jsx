@@ -38,13 +38,16 @@ export default function CTABanner(){
             <div>
               <p className='text-[var(--color-accent)] tracking-[0.35em] text-sm'>READY TO START?</p>
               <h2 className='text-4xl md:text-6xl font-bold text-white mt-4 leading-tight'>Build Your Next <span className='text-[var(--color-accent)]'>Project</span> With Experts</h2>
-              <p className='text-slate-300 text-lg mt-6 leading-8 max-w-2xl'>Get reliable industrial solutions, skilled manpower, fabrication support and on-time project execution tailored to your business needs.</p>
+       <p className='text-slate-300 text-lg mt-6 leading-8 max-w-2xl'>
+  Get reliable transportation, heavy equipment, material supply, car rental,
+  portable cabins, and skilled manpower solutions tailored to your business needs.
+</p>
             </div>
 
-            <div className='flex flex-col sm:flex-row lg:justify-end gap-4'>
-             <a href="#"> <button className='px-8 py-4 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] font-semibold hover:scale-105 transition duration-300'>Get Quote</button></a>
-              <a href="tel:+966544792862"><button className='px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white/10 transition duration-300'>Call Now</button></a>
-              <a href='https://wa.me/+966544792862'><button className='px-8 py-4 rounded-full border border-green-400/40 text-green-400 hover:bg-green-400/10 transition duration-300'>WhatsApp</button></a>
+            <div className='flex flex-col sm:flex-row lg:justify-end gap-4 '>
+             {/* <a href="#"> <button className='px-8 py-4 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] font-semibold hover:scale-105 transition duration-300'>Get Quote</button></a> */}
+              <a href="tel:+966550081047"><button className=' cursor-pointer px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white/10 transition duration-300'>Call Now</button></a>
+              <a href='https://wa.me/+966550081047'><button className='cursor-pointer px-8 py-4 rounded-full border border-green-400/40 text-green-400 hover:bg-green-400/10 transition duration-300'>WhatsApp</button></a>
             </div>
           </div>
         </div>

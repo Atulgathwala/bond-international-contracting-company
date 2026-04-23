@@ -1,12 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-} from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
 
 import { FaFacebookF } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
@@ -39,7 +34,10 @@ export default function ContactFooter() {
   }, []);
 
   return (
-    <section id="contact" className="pt-24 px-4 md:px-10 text-white overflow-hidden">
+    <section
+      id="contact"
+      className="pt-24 px-4 md:px-10 text-white overflow-hidden"
+    >
       <div
         ref={ref}
         className="max-w-7xl mx-auto rounded-[36px] border border-[var(--color-accent)]/20 bg-gradient-to-b from-[#0f172a] via-[#0b1220] to-[#060b14] overflow-hidden shadow-2xl"
@@ -56,47 +54,54 @@ export default function ContactFooter() {
               <span className="text-[var(--color-accent)]">Great</span>
             </h2>
 
-            <p className="text-slate-300 mt-6 text-lg leading-8">
-              Connect with our team for manpower, fabrication, heavy lifting,
-              construction and industrial solutions tailored to your project
-              needs.
-            </p>
+        <p className="text-slate-300 mt-6 text-lg leading-8">
+  Connect with our team for transportation, heavy equipment, material supply,
+  car rental, portable cabins, and manpower solutions tailored to your project
+  needs.
+</p>
 
-            <div className="space-y-5 mt-10">
+            <div className="space-y-6 mt-10">
+              {/* Phone */}
               <div className="flex items-start gap-4">
                 <Phone className="text-[var(--color-accent)] mt-1" />
                 <div>
                   <h4 className="font-semibold">Call Us</h4>
-                 <a href="tel:+966544792862"> <p className="text-slate-400">+966 54 479 2862</p></a>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Phone className="text-[var(--color-accent)] mt-1" />
-                <div>
-                  <h4 className="font-semibold">Call Us</h4>
-                  <a href="tel:+966550081047"><p className="text-slate-400">+966 55 008 1047</p></a>
+                  <a
+                    href="tel:+966550081047"
+                    className="text-slate-400 hover:text-white transition"
+                  >
+                    +966 55 008 1047
+                  </a>
                 </div>
               </div>
 
+              {/* Email */}
               <div className="flex items-start gap-4">
                 <Mail className="text-[var(--color-accent)] mt-1" />
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-slate-400">info@bondinternationalksa.com</p>
+                  <a
+                    href="mailto:info@bondinternationalksa.com"
+                    className="text-slate-400 hover:text-white transition"
+                  >
+                    info@bondinternationalksa.com
+                  </a>
                 </div>
               </div>
 
+              {/* Location */}
               <div className="flex items-start gap-4">
                 <MapPin className="text-[var(--color-accent)] mt-1" />
                 <div>
                   <h4 className="font-semibold">Location</h4>
-                  <p className="text-slate-400">
-                    Street Ibn Al Jawzi, Al Dana Dist.P.O Box 35514 Al Jubail Kimgdom of Saudi Arabia
-                   
+                  <p className="text-slate-400 leading-7">
+                    Street Ibn Al Jawzi, Al Dana Dist. P.O Box 35514,
+                    Al Jubail, Kingdom of Saudi Arabia
                   </p>
                 </div>
               </div>
 
+              {/* Timing */}
               <div className="flex items-start gap-4">
                 <Clock className="text-[var(--color-accent)] mt-1" />
                 <div>
@@ -111,8 +116,24 @@ export default function ContactFooter() {
 
           {/* RIGHT SIDE MAP */}
           <div className="p-6 md:p-10">
-            <div className="rounded-[28px] overflow-hidden border border-white/10 h-full min-h-[450px] shadow-xl">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56883.53843500808!2d49.60579806388671!3d26.991553159377542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e35a1001a2047d1%3A0xd00a673f2c7446fa!2sAl-Dana%20Building!5e0!3m2!1sen!2sin!4v1776768867049!5m2!1sen!2sin" className="h-full w-full"  loading="lazy" ></iframe>
+            <div className="relative rounded-[28px] overflow-hidden border border-white/10 h-full min-h-[450px] shadow-xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56883.53843500808!2d49.60579806388671!3d26.991553159377542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e35a1001a2047d1%3A0xd00a673f2c7446fa!2sAl-Dana%20Building!5e0!3m2!1sen!2sin!4v1776768867049!5m2!1sen!2sin"
+                className="w-full h-full"
+                loading="lazy"
+                allowFullScreen
+              ></iframe>
+
+              {/* Open Maps Button */}
+              <a
+                href="https://www.google.com/maps/place/Al-Dana+Building+Al+Jubail+Saudi+Arabia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-4 bg-[var(--color-accent)] text-black px-5 py-3 rounded-full font-semibold flex items-center gap-2 shadow-lg hover:scale-105 transition duration-300"
+              >
+                <ExternalLink size={18} />
+                Open in Maps
+              </a>
             </div>
           </div>
         </div>
@@ -120,7 +141,7 @@ export default function ContactFooter() {
         {/* FOOTER */}
         <div className="border-t border-white/10 px-8 md:px-14 py-6 flex flex-col md:flex-row items-center justify-between gap-5">
           <p className="text-slate-400 text-sm">
-            © 2026 Your Company. All Rights Reserved.
+          © 2026 Bond International. All Rights Reserved. <br /> <a href="tel:+918218695041">Developed by Atul Gathwala </a>
           </p>
 
           <div className="flex items-center gap-4">
